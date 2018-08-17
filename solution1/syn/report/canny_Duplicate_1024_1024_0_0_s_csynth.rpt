@@ -1,0 +1,152 @@
+
+
+================================================================
+== Vivado HLS Report for 'canny_Duplicate_1024_1024_0_0_s'
+================================================================
+* Date:           Fri Jul 06 13:00:27 2018
+
+* Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
+* Project:        cannyedge
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|      3.48|        0.63|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +---------+---------+---------+---------+---------+
+    |      Latency      |      Interval     | Pipeline|
+    |   min   |   max   |   min   |   max   |   Type  |
+    +---------+---------+---------+---------+---------+
+    |  1051649|  1051649|  1051649|  1051649|   none  |
+    +---------+---------+---------+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+        |               |      Latency      | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name   |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- loop_height  |  1051648|  1051648|      1027|          -|          -|  1024|    no    |
+        | + loop_width  |     1024|     1024|         2|          1|          1|  1024|    yes   |
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     34|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|     23|
+|Register         |        -|      -|      41|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|      41|     57|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name   | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------+----------+-------+---+----+------------+------------+
+    |i_V_fu_100_p2       |     +    |      0|  0|  11|          11|           1|
+    |j_V_fu_112_p2       |     +    |      0|  0|  11|          11|           1|
+    |exitcond2_fu_94_p2  |   icmp   |      0|  0|   5|          11|          12|
+    |exitcond_fu_106_p2  |   icmp   |      0|  0|   5|          11|          12|
+    |ap_sig_bdd_76       |    or    |      0|  0|   1|           1|           1|
+    |ap_sig_bdd_99       |    or    |      0|  0|   1|           1|           1|
+    +--------------------+----------+-------+---+----+------------+------------+
+    |Total               |          |      0|  0|  34|          46|          28|
+    +--------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------+----+-----------+-----+-----------+
+    |    Name    | LUT| Input Size| Bits| Total Bits|
+    +------------+----+-----------+-----+-----------+
+    |ap_NS_fsm   |   1|          5|    1|          5|
+    |p_6_reg_83  |  11|          2|   11|         22|
+    |p_s_reg_72  |  11|          2|   11|         22|
+    +------------+----+-----------+-----+-----------+
+    |Total       |  23|          9|   23|         49|
+    +------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------+----+----+-----+-----------+
+    |          Name         | FF | LUT| Bits| Const Bits|
+    +-----------------------+----+----+-----+-----------+
+    |ap_CS_fsm              |   4|   0|    4|          0|
+    |ap_done_reg            |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it0  |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it1  |   1|   0|    1|          0|
+    |exitcond_reg_127       |   1|   0|    1|          0|
+    |i_V_reg_122            |  11|   0|   11|          0|
+    |p_6_reg_83             |  11|   0|   11|          0|
+    |p_s_reg_72             |  11|   0|   11|          0|
+    +-----------------------+----+----+-----+-----------+
+    |Total                  |  41|   0|   41|          0|
+    +-----------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------+-----+-----+------------+-----------------------------------+--------------+
+|         RTL Ports         | Dir | Bits|  Protocol  |           Source Object           |    C Type    |
++---------------------------+-----+-----+------------+-----------------------------------+--------------+
+|ap_clk                     |  in |    1| ap_ctrl_hs | canny_Duplicate<1024, 1024, 0, 0> | return value |
+|ap_rst                     |  in |    1| ap_ctrl_hs | canny_Duplicate<1024, 1024, 0, 0> | return value |
+|ap_start                   |  in |    1| ap_ctrl_hs | canny_Duplicate<1024, 1024, 0, 0> | return value |
+|ap_done                    | out |    1| ap_ctrl_hs | canny_Duplicate<1024, 1024, 0, 0> | return value |
+|ap_continue                |  in |    1| ap_ctrl_hs | canny_Duplicate<1024, 1024, 0, 0> | return value |
+|ap_idle                    | out |    1| ap_ctrl_hs | canny_Duplicate<1024, 1024, 0, 0> | return value |
+|ap_ready                   | out |    1| ap_ctrl_hs | canny_Duplicate<1024, 1024, 0, 0> | return value |
+|src_data_stream_V_dout     |  in |    8|   ap_fifo  |         src_data_stream_V         |    pointer   |
+|src_data_stream_V_empty_n  |  in |    1|   ap_fifo  |         src_data_stream_V         |    pointer   |
+|src_data_stream_V_read     | out |    1|   ap_fifo  |         src_data_stream_V         |    pointer   |
+|dst1_data_stream_V_din     | out |    8|   ap_fifo  |         dst1_data_stream_V        |    pointer   |
+|dst1_data_stream_V_full_n  |  in |    1|   ap_fifo  |         dst1_data_stream_V        |    pointer   |
+|dst1_data_stream_V_write   | out |    1|   ap_fifo  |         dst1_data_stream_V        |    pointer   |
+|dst2_data_stream_V_din     | out |    8|   ap_fifo  |         dst2_data_stream_V        |    pointer   |
+|dst2_data_stream_V_full_n  |  in |    1|   ap_fifo  |         dst2_data_stream_V        |    pointer   |
+|dst2_data_stream_V_write   | out |    1|   ap_fifo  |         dst2_data_stream_V        |    pointer   |
++---------------------------+-----+-----+------------+-----------------------------------+--------------+
+

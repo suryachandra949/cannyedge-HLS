@@ -1,0 +1,49 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'canny_AXIvideo2Mat_8_1024_1024_0_s'" level="0">
+<item name = "Date">Fri Jul 06 13:00:13 2018
+</item>
+<item name = "Version">2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)</item>
+<item name = "Project">cannyedge</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">5.00, 3.71, 0.63</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">3, 1052675, 3, 1052675, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- loop_wait_for_start">0, 0, 1, 1, 1, 0, yes</column>
+<column name="- loop_height">0, 1052672, 4 ~ 1028, -, -, 0 ~ 1024, no</column>
+<column name=" + loop_width">0, 1024, 2, 1, 1, 0 ~ 1024, yes</column>
+<column name=" + loop_wait_for_eol">0, 0, 1, 1, 1, 0, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

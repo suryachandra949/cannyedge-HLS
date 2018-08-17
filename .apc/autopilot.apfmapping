@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="cannyedge.cc" path="C:\Users\suryachandraprasad\cannyedge\cannyedge.cc"/>
+    <originFiles name="cannyedge.h" path="C:\Users\suryachandraprasad\cannyedge\cannyedge.h"/>
+    <originFiles name="zebra.jpg" path="C:\Users\suryachandraprasad\zebra.jpg"/>
+  </source>
+  <testbench>
+    <originFiles name="cannytest.cc" path="C:\Users\suryachandraprasad\cannyedge\cannytest.cc"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

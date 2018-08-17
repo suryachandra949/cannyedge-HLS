@@ -1,0 +1,193 @@
+
+
+================================================================
+== Vivado HLS Report for 'canny'
+================================================================
+* Date:           Fri Jul 06 13:00:34 2018
+
+* Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
+* Project:        cannyedge
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|      4.37|        0.63|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +---------+---------+---------+---------+----------+
+    |      Latency      |      Interval     | Pipeline |
+    |   min   |   max   |   min   |   max   |   Type   |
+    +---------+---------+---------+---------+----------+
+    |  1069108|  1070139|  1069096|  1070138| dataflow |
+    +---------+---------+---------+---------+----------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------------------------+------------------------------------+---------+---------+---------+---------+---------+
+        |                                               |                                    |      Latency      |      Interval     | Pipeline|
+        |                    Instance                   |               Module               |   min   |   max   |   min   |   max   |   Type  |
+        +-----------------------------------------------+------------------------------------+---------+---------+---------+---------+---------+
+        |stg_31_canny_Block_proc_fu_248                 |canny_Block_proc                    |        0|        0|        0|        0|   none  |
+        |grp_canny_AXIvideo2Mat_8_1024_1024_0_s_fu_199  |canny_AXIvideo2Mat_8_1024_1024_0_s  |        3|  1052675|        3|  1052675|   none  |
+        |grp_canny_GaussianBlur_fu_160                  |canny_GaussianBlur                  |      237|  1070137|      237|  1070137|   none  |
+        |grp_canny_Duplicate_1024_1024_0_0_s_fu_241     |canny_Duplicate_1024_1024_0_0_s     |  1051649|  1051649|  1051649|  1051649|   none  |
+        |grp_canny_Sobel_fu_168                         |canny_Sobel                         |  1069095|  1069095|  1069095|  1069095|   none  |
+        |grp_canny_Sobel_1_fu_174                       |canny_Sobel_1                       |  1069095|  1069095|  1069095|  1069095|   none  |
+        |grp_canny_grad_computation_fu_192              |canny_grad_computation              |  1053697|  1053697|  1053697|  1053697|   none  |
+        |grp_canny_nonmax_supression_fu_180             |canny_nonmax_supression             |  1056776|  1056776|  1056776|  1056776|   none  |
+        |grp_canny_hysterisis_fu_186                    |canny_hysterisis                    |  1053697|  1053697|  1053697|  1053697|   none  |
+        |grp_canny_Mat2AXIvideo_8_1022_1022_0_s_fu_222  |canny_Mat2AXIvideo_8_1022_1022_0_s  |  1047551|  1047551|  1047551|  1047551|   none  |
+        +-----------------------------------------------+------------------------------------+---------+---------+---------+---------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        0|      -|      65|    284|
+|Instance         |       13|     21|    2640|   2393|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|      19|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |       13|     21|    2724|   2677|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        4|      9|       2|      5|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-------------------------------------+------------------------------------+---------+-------+-----+-----+
+    |               Instance              |               Module               | BRAM_18K| DSP48E|  FF | LUT |
+    +-------------------------------------+------------------------------------+---------+-------+-----+-----+
+    |canny_AXIvideo2Mat_8_1024_1024_0_U0  |canny_AXIvideo2Mat_8_1024_1024_0_s  |        0|      0|  116|  112|
+    |canny_Block_proc_U0                  |canny_Block_proc                    |        0|      0|    2|    1|
+    |canny_Duplicate_1024_1024_0_0_U0     |canny_Duplicate_1024_1024_0_0_s     |        0|      0|   41|   57|
+    |canny_GaussianBlur_U0                |canny_GaussianBlur                  |        3|      9|  738|  679|
+    |canny_Mat2AXIvideo_8_1022_1022_0_U0  |canny_Mat2AXIvideo_8_1022_1022_0_s  |        0|      0|   41|   56|
+    |canny_Sobel_U0                       |canny_Sobel                         |        3|      6|  570|  478|
+    |canny_Sobel_1_U0                     |canny_Sobel_1                       |        3|      6|  570|  478|
+    |canny_grad_computation_U0            |canny_grad_computation              |        0|      0|   88|  172|
+    |canny_hysterisis_U0                  |canny_hysterisis                    |        2|      0|  154|  131|
+    |canny_nonmax_supression_U0           |canny_nonmax_supression             |        2|      0|  320|  229|
+    +-------------------------------------+------------------------------------+---------+-------+-----+-----+
+    |Total                                |                                    |       13|     21| 2640| 2393|
+    +-------------------------------------+------------------------------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +----------------------------------+---------+---+----+------+-----+---------+
+    |               Name               | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +----------------------------------+---------+---+----+------+-----+---------+
+    |grad_out_data_stream_0_V_U        |        0|  5|  28|     1|   16|       16|
+    |grad_x_data_stream_0_V_U          |        0|  5|  20|     1|    8|        8|
+    |grad_y_data_stream_0_V_U          |        0|  5|  20|     1|    8|        8|
+    |hysterisis_Image_data_stream_0_U  |        0|  5|  20|     1|    8|        8|
+    |img_0_cols_V_channel20_U          |        0|  5|  24|     1|   12|       12|
+    |img_0_cols_V_channel_U            |        0|  5|  24|     1|   12|       12|
+    |img_0_data_stream_0_V_U           |        0|  5|  20|     1|    8|        8|
+    |img_0_rows_V_channel19_U          |        0|  5|  24|     1|   12|       12|
+    |img_0_rows_V_channel_U            |        0|  5|  24|     1|   12|       12|
+    |img_1_data_stream_0_V_U           |        0|  5|  20|     1|    8|        8|
+    |img_2_data_stream_0_V_U           |        0|  5|  20|     1|    8|        8|
+    |img_3_data_stream_0_V_U           |        0|  5|  20|     1|    8|        8|
+    |supressed_Image_data_stream_0_U   |        0|  5|  20|     1|    8|        8|
+    +----------------------------------+---------+---+----+------+-----+---------+
+    |Total                             |        0| 65| 284|    13|  128|      128|
+    +----------------------------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    +-----------------------------------------------------+---+----+-----+-----------+
+    |                         Name                        | FF| LUT| Bits| Const Bits|
+    +-----------------------------------------------------+---+----+-----+-----------+
+    |ap_CS                                                |  1|   0|    1|          0|
+    |ap_reg_procdone_canny_AXIvideo2Mat_8_1024_1024_0_U0  |  1|   0|    1|          0|
+    |ap_reg_procdone_canny_Block_proc_U0                  |  1|   0|    1|          0|
+    |ap_reg_procdone_canny_Duplicate_1024_1024_0_0_U0     |  1|   0|    1|          0|
+    |ap_reg_procdone_canny_GaussianBlur_U0                |  1|   0|    1|          0|
+    |ap_reg_procdone_canny_Mat2AXIvideo_8_1022_1022_0_U0  |  1|   0|    1|          0|
+    |ap_reg_procdone_canny_Sobel_1_U0                     |  1|   0|    1|          0|
+    |ap_reg_procdone_canny_Sobel_U0                       |  1|   0|    1|          0|
+    |ap_reg_procdone_canny_grad_computation_U0            |  1|   0|    1|          0|
+    |ap_reg_procdone_canny_hysterisis_U0                  |  1|   0|    1|          0|
+    |ap_reg_procdone_canny_nonmax_supression_U0           |  1|   0|    1|          0|
+    |canny_Duplicate_1024_1024_0_0_U0_ap_start            |  1|   0|    1|          0|
+    |canny_GaussianBlur_U0_ap_start                       |  1|   0|    1|          0|
+    |canny_Mat2AXIvideo_8_1022_1022_0_U0_ap_start         |  1|   0|    1|          0|
+    |canny_Sobel_1_U0_ap_start                            |  1|   0|    1|          0|
+    |canny_Sobel_U0_ap_start                              |  1|   0|    1|          0|
+    |canny_grad_computation_U0_ap_start                   |  1|   0|    1|          0|
+    |canny_hysterisis_U0_ap_start                         |  1|   0|    1|          0|
+    |canny_nonmax_supression_U0_ap_start                  |  1|   0|    1|          0|
+    +-----------------------------------------------------+---+----+-----+-----------+
+    |Total                                                | 19|   0|   19|          0|
+    +-----------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------+-----+-----+------------+------------------------+--------------+
+|       RTL Ports      | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++----------------------+-----+-----+------------+------------------------+--------------+
+|input_stream_TDATA    |  in |    8|    axis    |  input_stream_V_data_V |    pointer   |
+|input_stream_TKEEP    |  in |    1|    axis    |  input_stream_V_keep_V |    pointer   |
+|input_stream_TSTRB    |  in |    1|    axis    |  input_stream_V_strb_V |    pointer   |
+|input_stream_TUSER    |  in |    1|    axis    |  input_stream_V_user_V |    pointer   |
+|input_stream_TLAST    |  in |    1|    axis    |  input_stream_V_last_V |    pointer   |
+|input_stream_TID      |  in |    1|    axis    |   input_stream_V_id_V  |    pointer   |
+|input_stream_TDEST    |  in |    1|    axis    |  input_stream_V_dest_V |    pointer   |
+|input_stream_TVALID   |  in |    1|    axis    |  input_stream_V_dest_V |    pointer   |
+|input_stream_TREADY   | out |    1|    axis    |  input_stream_V_dest_V |    pointer   |
+|output_stream_TDATA   | out |    8|    axis    | output_stream_V_data_V |    pointer   |
+|output_stream_TKEEP   | out |    1|    axis    | output_stream_V_keep_V |    pointer   |
+|output_stream_TSTRB   | out |    1|    axis    | output_stream_V_strb_V |    pointer   |
+|output_stream_TUSER   | out |    1|    axis    | output_stream_V_user_V |    pointer   |
+|output_stream_TLAST   | out |    1|    axis    | output_stream_V_last_V |    pointer   |
+|output_stream_TID     | out |    1|    axis    |  output_stream_V_id_V  |    pointer   |
+|output_stream_TDEST   | out |    1|    axis    | output_stream_V_dest_V |    pointer   |
+|output_stream_TVALID  | out |    1|    axis    | output_stream_V_dest_V |    pointer   |
+|output_stream_TREADY  |  in |    1|    axis    | output_stream_V_dest_V |    pointer   |
+|ap_clk                |  in |    1| ap_ctrl_hs |          canny         | return value |
+|ap_rst_n              |  in |    1| ap_ctrl_hs |          canny         | return value |
+|ap_start              |  in |    1| ap_ctrl_hs |          canny         | return value |
+|ap_done               | out |    1| ap_ctrl_hs |          canny         | return value |
+|ap_idle               | out |    1| ap_ctrl_hs |          canny         | return value |
+|ap_ready              | out |    1| ap_ctrl_hs |          canny         | return value |
++----------------------+-----+-----+------------+------------------------+--------------+
+

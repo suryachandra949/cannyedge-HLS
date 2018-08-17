@@ -1,0 +1,71 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="grad_computation" label="">
+<pragma name="LOOP_FLATTEN">
+<option name="OFF" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="grad_computation" label="">
+<pragma name="DEPENDENCE">
+<option name="array" positionalBoolean="class" value=""/>
+<option name="inter" positionalBoolean="type" value=""/>
+<option name="false" positionalBoolean="dependent" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="grad_computation" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="nonmax_supression" label="">
+<pragma name="LOOP_FLATTEN">
+<option name="OFF" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="nonmax_supression" label="">
+<pragma name="DEPENDENCE">
+<option name="array" positionalBoolean="class" value=""/>
+<option name="inter" positionalBoolean="type" value=""/>
+<option name="false" positionalBoolean="dependent" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="nonmax_supression" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="hysterisis" label="">
+<pragma name="LOOP_FLATTEN">
+<option name="OFF" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="hysterisis" label="">
+<pragma name="DEPENDENCE">
+<option name="array" positionalBoolean="class" value=""/>
+<option name="inter" positionalBoolean="type" value=""/>
+<option name="false" positionalBoolean="dependent" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="hysterisis" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="canny" label="">
+<pragma name="INTERFACE">
+<option name="axis" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="input_stream"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="canny" label="">
+<pragma name="INTERFACE">
+<option name="axis" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="output_stream"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="canny" label="">
+<pragma name="RESOURCE">
+<option name="variable" positionalBoolean="4" value="return"/>
+<option name="core" value="AXI_SLAVE"/>
+<option name="metadata" value="&quot;-bus_bundle CONTROL_BUS&quot;"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="canny" label="">
+<pragma name="DATAFLOW"/>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>
